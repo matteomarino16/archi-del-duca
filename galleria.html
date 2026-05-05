@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galleria - Archi del Duca</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Stile per il lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .lightbox.active {
+            display: flex;
+        }
+        
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+        }
+        
+        .lightbox-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+            z-index: 1001;
+        }
+        
+        .gallery-container img {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <img src="scritta.png" alt="Archi del Duca">
+        </div>
+
+        <!-- Icona menu hamburger 3D -->
+        <div class="hamburger-3d" id="hamburger">
+            <div class="line line1"></div>
+            <div class="line line2"></div>
+            <div class="line line3"></div>
+        </div>
+
+        <!-- Menu di navigazione -->
+        <nav id="nav-menu">
+            <ul class="menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menù</a></li>
+                <li><a href="galleria.html">Galleria</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sezione Galleria -->
+    <section class="gallery">
+        <h2 class="starkwalker-font">Galleria</h2>
+        <div class="gallery-container mosaic">
+            <img src="1.jpg" alt="Foto 1" class="gallery-img">
+            <img src="2.jpg" alt="Foto 2" class="gallery-img">
+            <img src="3.jpg" alt="Foto 3" class="gallery-img">
+            <img src="4.jpg" alt="Foto 4" class="gallery-img">
+            <img src="5.jpg" alt="Foto 5" class="gallery-img">
+            <img src="6.jpg" alt="Foto 6" class="gallery-img">
+            <img src="7.jpg" alt="Foto 7" class="gallery-img">
+            <img src="8.jpg" alt="Foto 8" class="gallery-img">
+            <img src="9.jpg" alt="Foto 9" class="gallery-img">
+            <img src="10.jpg" alt="Foto 10" class="gallery-img">
+            <img src="11.jpg" alt="Foto 11" class="gallery-img">
+            <img src="12.jpg" alt="Foto 12" class="gallery-img">
+            <img src="13.jpg" alt="Foto 13" class="gallery-img">
+            <img src="14.jpg" alt="Foto 14" class="gallery-img">
+            <img src="15.jpg" alt="Foto 15" class="gallery-img">
+            <img src="16.jpg" alt="Foto 16" class="gallery-img">
+            <img src="17.jpg" alt="Foto 17" class="gallery-img">
+            <img src="18.jpg" alt="Foto 18" class="gallery-img">
+            <img src="19.jpg" alt="Foto 19" class="gallery-img">
+            <img src="20.jpg" alt="Foto 20" class="gallery-img">
+            <img src="21.jpg" alt="Foto 21" class="gallery-img">
+            <img src="22.jpg" alt="Foto 22" class="gallery-img">
+            <img src="23.jpg" alt="Foto 23" class="gallery-img">
+            <img src="24.jpg" alt="Foto 24" class="gallery-img">
+        </div>
+    </section>
+    
+    <!-- Lightbox per visualizzare le immagini a schermo intero -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-lightbox" id="close-lightbox">&times;</span>
+        <div class="lightbox-content">
+            <img src="" alt="Immagine a schermo intero" class="lightbox-image" id="lightbox-image">
+        </div>
+    </div>
+
+    <!-- Footer -->
+    </div>
+    <footer>
+        <p>Archi del Duca - Via Cirillo, 10 - Martina Franca </p>
+        <p>Tel: +39 3387529724 | Mail: info@archidelduca.it</p>
+        <p> P.iva 026556940737</p>
+        <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+
+        <p>&copy; 2026 ArchidelDuca.it - Tutti i diritti riservati</p>
+         <p>  Web by <a href="https://www.instagram.com/_matteomarino">Matteo Marino</a> </p>
+    </footer>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/+393387529724" class="whatsapp-button" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+        <span class="whatsapp-tooltip">Prenota un tavolo</span>
+    </a>
+
+    <!-- Script per il menu hamburger e lightbox -->
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+            hamburger.classList.toggle('open'); // Aggiunge/rimuove la classe per l'animazione 3D
+        });
+        
+        // Funzionalità lightbox per visualizzare le immagini a schermo intero
+        const galleryImages = document.querySelectorAll('.gallery-img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImage = document.getElementById('lightbox-image');
+        const closeLightbox = document.getElementById('close-lightbox');
+        
+        // Apri il lightbox quando un'immagine viene cliccata
+        galleryImages.forEach(image => {
+            image.addEventListener('click', () => {
+                lightboxImage.src = image.src;
+                lightboxImage.alt = image.alt;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Impedisce lo scrolling della pagina
+            });
+        });
+        
+        // Chiudi il lightbox quando si clicca sulla X
+        closeLightbox.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+            document.body.style.overflow = ''; // Ripristina lo scrolling della pagina
+        });
+        
+        // Chiudi il lightbox quando si clicca fuori dall'immagine
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = ''; // Ripristina lo scrolling della pagina
+            }
+        });
+        
+        // Chiudi il lightbox quando si preme ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = ''; // Ripristina lo scrolling della pagina
+            }
+        });
+    </script>
+</body>
+</html>
