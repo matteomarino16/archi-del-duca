@@ -759,3 +759,229 @@ footer a, footer i {
         font-size: 28px;
     }
 }
+
+/* SELETTORE LINGUA */
+header .logo {
+    margin-right: auto;
+}
+
+.lang-switch {
+    position: relative;
+    margin-left: 20px;
+    z-index: 10001;
+}
+
+.lang-current {
+    background: none;
+    border: 1px solid #c49b66;
+    color: #f8f8f8;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.lang-current::after {
+    content: ' \25BE';
+}
+
+.lang-current:hover {
+    color: #c49b66;
+}
+
+.lang-options {
+    display: none;
+    position: absolute;
+    top: calc(100% + 6px);
+    right: 0;
+    list-style: none;
+    background: linear-gradient(145deg, #2f0602, #250401);
+    box-shadow: 8px 8px 16px rgba(0,0,0,0.4);
+    min-width: 130px;
+    padding: 6px 0;
+}
+
+.lang-switch.open .lang-options {
+    display: block;
+}
+
+.lang-options button {
+    display: block;
+    width: 100%;
+    background: none;
+    border: none;
+    color: #f8f8f8;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    padding: 8px 14px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.lang-options button:hover,
+.lang-options button.active {
+    color: #c49b66;
+}
+
+/* MENU TRADOTTO (EN/FR/DE) */
+.menu-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 16px;
+}
+
+.menu-text[hidden],
+.menu-images[hidden] {
+    display: none;
+}
+
+.menu-card {
+    width: 100%;
+    max-width: 620px;
+    background: #fff;
+    color: #2a0502;
+    padding: 50px 40px 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    text-align: left;
+}
+
+.menu-card-brand {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 2.2rem;
+    line-height: 1.15;
+    text-align: center;
+    color: #3b0803;
+    padding-bottom: 14px;
+    border-bottom: 4px solid #d98c2b;
+}
+
+.menu-card-sub {
+    text-align: center;
+    font-style: italic;
+    font-size: 1.2rem;
+    margin: 10px 0 20px;
+}
+
+.menu-card-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 2.2rem;
+    text-align: center;
+    color: #3b0803;
+    margin: 25px 0 20px;
+}
+
+.menu-card-title:first-child {
+    margin-top: 0;
+}
+
+.menu-card-text {
+    font-size: 1.15rem;
+    line-height: 1.5;
+    color: #555;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.menu-card-allergens {
+    font-style: italic;
+    margin-top: 20px;
+}
+
+.menu-card-list {
+    list-style: none;
+}
+
+.dish {
+    margin-bottom: 14px;
+}
+
+.dish-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+}
+
+.dish-name {
+    font-size: 1.4rem;
+    line-height: 1.2;
+}
+
+.dish:not(.dish-plain) .dish-name::before {
+    content: '\25C6';
+    font-size: 0.6em;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.dish-name sup {
+    font-size: 0.6em;
+}
+
+.dish-price {
+    font-size: 1.4rem;
+    white-space: nowrap;
+}
+
+.dish-it,
+.dish-desc {
+    display: block;
+    font-style: italic;
+    font-size: 1.05rem;
+    color: #555;
+}
+
+.dish-desc {
+    margin-top: 4px;
+}
+
+.menu-card-footnote {
+    font-size: 0.95rem;
+    text-align: center;
+    color: #555;
+    margin-top: 30px;
+}
+
+.menu-card-logo {
+    display: block;
+    width: 110px;
+    margin: 30px auto 0;
+}
+
+@media (max-width: 768px) {
+    .menu-card {
+        padding: 30px 20px 20px;
+    }
+
+    .menu-card-title,
+    .menu-card-brand {
+        font-size: 1.8rem;
+    }
+
+    .dish-name,
+    .dish-price {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    header .logo {
+        margin-right: 0;
+    }
+
+    .lang-switch {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        margin-left: 0;
+    }
+}

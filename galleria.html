@@ -51,7 +51,7 @@
         }
     </style>
 </head>
-<body>
+<body data-i18n-title="title.gallery">
     <div class="content-wrapper">
     <!-- Header -->
     <header>
@@ -69,16 +69,27 @@
         <!-- Menu di navigazione -->
         <nav id="nav-menu">
             <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menù</a></li>
-                <li><a href="galleria.html">Galleria</a></li>
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="menu.html" data-i18n="nav.menu">Menù</a></li>
+                <li><a href="galleria.html" data-i18n="nav.gallery">Galleria</a></li>
             </ul>
         </nav>
+    
+        <!-- Selettore lingua -->
+        <div class="lang-switch">
+            <button type="button" class="lang-current" aria-label="Lingua / Language">IT</button>
+            <ul class="lang-options">
+                <li><button type="button" data-lang="it">Italiano</button></li>
+                <li><button type="button" data-lang="en">English</button></li>
+                <li><button type="button" data-lang="fr">Français</button></li>
+                <li><button type="button" data-lang="de">Deutsch</button></li>
+            </ul>
+        </div>
     </header>
 
     <!-- Sezione Galleria -->
     <section class="gallery">
-        <h2 class="starkwalker-font">Galleria</h2>
+        <h2 class="starkwalker-font" data-i18n="gallery.title">Galleria</h2>
         <div class="gallery-container mosaic">
             <img src="1.jpg" alt="Foto 1" class="gallery-img">
             <img src="2.jpg" alt="Foto 2" class="gallery-img">
@@ -120,20 +131,20 @@
     <footer>
         <p>Archi del Duca - Via Cirillo, 10 - Martina Franca </p>
         <p>Tel: +39 3387529724 | Mail: info@archidelduca.it</p>
-        <p> P.iva 026556940737</p>
+        <p data-i18n="footer.vat">P.iva 026556940737</p>
         <div class="social-links">
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
 
-        <p>&copy; 2026 ArchidelDuca.it - Tutti i diritti riservati</p>
+        <p data-i18n="footer.rights">&copy; 2026 ArchidelDuca.it - Tutti i diritti riservati</p>
          <p>  Web by <a href="https://www.instagram.com/_matteomarino">Matteo Marino</a> </p>
     </footer>
 
     <!-- WhatsApp Button -->
     <a href="https://wa.me/+393387529724" class="whatsapp-button" target="_blank">
         <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-tooltip">Prenota un tavolo</span>
+        <span class="whatsapp-tooltip" data-i18n="whatsapp">Prenota un tavolo</span>
     </a>
 
     <!-- Script per il menu hamburger e lightbox -->
@@ -184,5 +195,6 @@
             }
         });
     </script>
+    <script src="i18n.js"></script>
 </body>
 </html>

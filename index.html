@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body data-i18n-title="title.home">
     <div class="content-wrapper">
     <!-- Header -->
     <header>
@@ -26,19 +26,24 @@
         <!-- Menu di navigazione -->
         <nav id="nav-menu">
             <ul class="menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="menu.html">Menù</a></li>
-                <li><a href="galleria.html">Galleria</a></li>
+                <li><a href="index.html" data-i18n="nav.home">Home</a></li>
+                <li><a href="menu.html" data-i18n="nav.menu">Menù</a></li>
+                <li><a href="galleria.html" data-i18n="nav.gallery">Galleria</a></li>
             </ul>
         </nav>
+    
+        <!-- Selettore lingua -->
+        <div class="lang-switch">
+            <button type="button" class="lang-current" aria-label="Lingua / Language">IT</button>
+            <ul class="lang-options">
+                <li><button type="button" data-lang="it">Italiano</button></li>
+                <li><button type="button" data-lang="en">English</button></li>
+                <li><button type="button" data-lang="fr">Français</button></li>
+                <li><button type="button" data-lang="de">Deutsch</button></li>
+            </ul>
+        </div>
     </header>
 </div>
-
-    <!-- WhatsApp Button -->
-    <a href="https://wa.me/+39NUMERODITELEFONO" class="whatsapp-button" target="_blank">
-        <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-tooltip">Prenota un tavolo</span>
-    </a>
 
     <!-- Sezione About Us con immagini laterali -->
     <section class="about-container">
@@ -46,14 +51,14 @@
             <img src="archi.png" alt="Archi del Duca">
         </div>
         <section class="about">
-            <h2 class="BebasNeue-font">About Us</h2>
+            <h2 class="BebasNeue-font" data-i18n="about.title">About Us</h2>
             <div class="about-extra">
-                <p>
+                <p data-i18n="about.p1">
                     Archi del Duca non è solo un nome, è un passaggio di famiglia, tradizione e memoria.<br>
                     Un arco è un varco che unisce due mondi: passato e presente, cucina di casa e raffinatezza,<br>
                     accoglienza familiare e gusto autentico.
                 </p>
-                <p>
+                <p data-i18n="about.p2">
                     ‘Del Duca’ omaggia il cuore antico di Martina Franca, tra nobili dimore e sapori popolari.<br>
                     Da quasi vent’anni, attraversare i nostri archi significa entrare in un luogo dove si mangia bene,<br>
                     si è accolti come a casa, e si celebra la cucina pugliese con rispetto e passione.
@@ -68,8 +73,8 @@
     <!-- Sezione Dove Siamo -->
     <section class="location-section">
         <div class="location-info">
-            <h2 class="starkwalker-font">Dove Siamo</h2>
-            <p>
+            <h2 class="starkwalker-font" data-i18n="location.title">Dove Siamo</h2>
+            <p data-i18n="location.hours">
                 Apertura:             <br>
                           12:30 - 15:00; <br>
                           20:00 - 23:30. <br>
@@ -126,20 +131,20 @@
     <footer>
         <p>Archi del Duca - Via Cirillo, 10 - Martina Franca </p>
         <p>Tel: +39 3387529724 | Mail: info@archidelduca.it</p>
-        <p> P.iva 026556940737</p>
+        <p data-i18n="footer.vat">P.iva 026556940737</p>
         <div class="social-links">
             <a href="#"><i class="fab fa-facebook"></i></a>
             <a href="#"><i class="fab fa-instagram"></i></a>
         </div>
 
-        <p>&copy; 2026 ArchidelDuca.it - Tutti i diritti riservati</p>
+        <p data-i18n="footer.rights">&copy; 2026 ArchidelDuca.it - Tutti i diritti riservati</p>
          <p>  Web by <a href="https://www.instagram.com/_matteomarino">Matteo Marino</a> </p>
     </footer>
 
     <!-- WhatsApp Button -->
     <a href="https://wa.me/+393387529724" class="whatsapp-button" target="_blank">
         <i class="fab fa-whatsapp"></i>
-        <span class="whatsapp-tooltip">Prenota un tavolo</span>
+        <span class="whatsapp-tooltip" data-i18n="whatsapp">Prenota un tavolo</span>
     </a>
     <!-- Script per il menu hamburger -->
     <script>
@@ -158,5 +163,6 @@
             }
         });
     </script>
+    <script src="i18n.js"></script>
 </body>
 </html>
