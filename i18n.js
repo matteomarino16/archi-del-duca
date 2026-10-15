@@ -72,6 +72,16 @@ const translations = {
 
 const LANGS = ['it', 'en', 'fr', 'de'];
 
+// GitHub Pages non permette redirect 301: se si arriva da un vecchio link (menu.html, index.html)
+// la barra degli indirizzi viene ripulita mostrando /menu, /galleria o /
+(function cleanUrl() {
+    const path = location.pathname;
+    if (!path.endsWith('.html')) return;
+    let clean = path.replace(/\.html$/, '');
+    if (clean.endsWith('/index')) clean = clean.slice(0, -'index'.length);
+    history.replaceState(null, '', clean + location.search + location.hash);
+})();
+
 function getSavedLang() {
     const fromUrl = new URLSearchParams(location.search).get('lang');
     if (LANGS.includes(fromUrl)) return fromUrl;

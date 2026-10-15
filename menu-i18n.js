@@ -190,7 +190,7 @@ function renderMenuText(lang) {
     }
 
     const L = menuLabels[lang];
-    const logo = '<img class="menu-card-logo" src="archi.png" alt="">';
+    const logo = '<img class="menu-card-logo" src="/archi.png" alt="">';
 
     let html = `
         <article class="menu-card">
